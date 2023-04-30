@@ -1,0 +1,119 @@
+:: StoryTitle
+Story
+
+
+:: StoryData
+{
+  "ifid": "89F87A4F-03B0-4C27-BDA8-A4C33D3B71B8",
+  "format": "Harlowe",
+  "format-version": "3.3.5",
+  "start": "The Bar",
+  "zoom": 1
+}
+
+
+:: Ask for a penny {"position":"1400,825","size":"100,100"}
+You ask the first person walking by for a penny. She thinks you are a begger, and the bouncer hears her. "No bums allowed!" and you get thrown out.
+
+[[Leave bar]] 
+
+
+:: Dance {"position":"1100,825","size":"100,100"}
+You are a terrible dancer, and people are laughing. You are shamed to such an extent that you have to leave.
+
+[[Leave bar]] 
+
+
+:: Go for the jukebox {"position":"1400,700","size":"100,100"}
+You see a jukebox and walk over to it.
+
+[[Ask for a penny]]
+[[Look for a penny in your pocket]]
+
+
+
+:: Go to the dancefloor {"position":"1100,700","size":"100,100"}
+You move towards the dancefloor.
+
+[[Dance]]
+[[Linger]]
+
+
+:: Insist on flirting {"position":"925,825","size":"100,100"}
+She signals to the bouncer. The bouncer arrives, grabs you by the arm and throws you out on the street.
+
+[[Leave bar]]
+
+
+:: Leave bar {"position":"1000,1100","size":"100,100"}
+
+
+
+:: Linger {"position":"1225,825","size":"100,100"}
+You look at the other party people on the dancefloor. People think you are a creep, and you are pushed out on the street by a handsome man.
+
+[[Leave bar]] 
+
+
+:: Look for a penny in your pocket {"position":"1525,825","size":"100,100"}
+You look in your pocket, and find a small, yellow pill with a happy face on it.
+
+[[Swallow it]]
+[[Put it back in your pocket]]
+
+
+:: Order a drink {"position":"575,700","size":"100,100"}
+You signal to the bartender that you want to order a drink
+
+[[Order cranberry juice]]
+[[Order a negroni]]
+
+
+:: Order a negroni {"position":"700,825","size":"100,100"}
+The bartender misunderstands what you say, thinking you are saying the n-word. She publicly shames you and the bouncer grabs you and throws you out.
+
+[[Leave bar]] 
+
+
+:: Order cranberry juice {"position":"575,825","size":"100,100"}
+You're a pussy. You are shamed by the bartender and the other people at the bar, for buying such a weak drink. You have no other choice but to leave.
+
+[[Leave bar]] 
+
+
+:: Put it back in your pocket {"position":"1650,1075","size":"100,100"}
+Lol. Have some fun. Nightlife is not for you.
+
+[[Leave bar]] 
+
+
+:: Sit by the bar {"position":"700,500","size":"100,100"}
+You find an empty bar chair and sit on it.
+
+[[Order a drink]]
+[[Wink at the bartender]]
+
+
+:: Stand in the corner {"position":"1100,500","size":"100,100"}
+[[Go for the jukebox]]
+[[Go to the dancefloor]]
+
+
+:: Swallow it {"position":"1525,950","size":"100,100"}
+You are tripping instantly. You forgot what happened, but you think you left the bar.
+
+[[Leave bar]] 
+
+
+:: The Bar {"position":"925,400","size":"100,100"}
+You walk into a bar. It is filled with people.
+
+[[Sit by the bar]]
+[[Stand in the corner]]
+
+
+:: Wink at the bartender {"position":"800,700","size":"100,100"}
+You make eye contact with the bartender. She's scoffs and shakes her head.
+
+[[Insist on flirting]]
+[[Order a drink]] 
