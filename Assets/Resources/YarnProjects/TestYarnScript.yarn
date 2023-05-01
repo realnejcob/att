@@ -1,14 +1,14 @@
 ﻿title: Start
 tags: 
 colorID: 0
-position: 550,729
+position: 561,711
 ---
 You walk into a bar.
 It is filled with people.
 
--> Sit by the bar #125
+-> This is an option #125
 	<<jump SitByTheBar>>
--> Stand in the corner #53355
+-> Another Option #53355
 	<<jump StandInTheCorner>>
 ===
 title: SitByTheBar
@@ -42,7 +42,7 @@ You try to decide on what to do.
 title: OrderADrink
 tags: 2
 colorID: 0
-position: 291,257
+position: 176,402
 ---
 You signal to the bartender that you want to order a drink
 

@@ -1,0 +1,37 @@
+﻿title: HereWeGo
+tags:
+---
+One or two?
+
+-> Option1
+    <<jump NewNode1>>
+
+-> Option2
+    <<jump NewNode2>>
+
+===
+
+title: NewNode1
+tags:
+position: 310,-207
+---
+Back or two?
+
+-> Option 2
+    <<jump NewNode2>>
+-> GoBack
+    <<jump HereWeGo>>
+===
+
+
+title: NewNode2
+tags:
+position: 354,131
+---
+Back or One?
+
+-> Option1
+    <<jump NewNode2>>
+-> GoBack
+    <<jump HereWeGo>>
+===
