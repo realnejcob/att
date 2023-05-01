@@ -1,0 +1,206 @@
+﻿title: Start
+tags: 
+colorID: 0
+position: 550,729
+---
+You walk into a bar.
+It is filled with people.
+
+-> Sit by the bar #125
+	<<jump SitByTheBar>>
+-> Stand in the corner #53355
+	<<jump StandInTheCorner>>
+===
+title: SitByTheBar
+tags: 1
+colorID: 0
+position: 559,420
+---
+You find an empty bar chair and sit on it.
+
+-> Order a drink
+	<<jump OrderADrink>>
+
+-> Wink at the bartender
+	<<jump WinkAtTheBartender >>
+===
+title: StandInTheCorner
+tags: 25
+colorID: 0
+position: 1032,477
+---
+You move to the side of the bar, looking over at all the people.
+You try to decide on what to do.
+
+-> Go for the jukebox
+	<<jump GoForTheJukebox>>
+-> Go to the dancefloor
+	<<jump GoToTheDancefloor>>
+-> Sit by the bar
+	<<jump SitByTheBar>>
+===
+title: OrderADrink
+tags: 2
+colorID: 0
+position: 291,257
+---
+You signal to the bartender that you want to order a drink
+
+-> Cranberry Juice
+	<<jump OrderCranberryJuice>>
+
+-> Negroni
+	<<jump OrderANegroni>>
+===
+title: WinkAtTheBartender
+tags: 4
+colorID: 0
+position: 610,168
+---
+You make eye contact with the bartender.
+She's scoffs and shakes her head.
+
+-> Insist on flirting
+	<<jump InsistOnFlirting>>
+-> Order a drink
+	<<jump OrderADrink>>
+===
+title: GoForTheJukebox
+tags: 36
+colorID: 0
+position: 1520,400
+---
+You see a jukebox and walk over to it.
+You are trying to figure out if you like the music and want to dance, or you want something different on.
+
+-> Go to dancefloor
+	<<jump GoToTheDancefloor>>
+-> Ask for penny
+	<<jump AskForAPenny>>
+-> Look for penny in pocket
+	<<jump LookForAPennyInYourPocket>>
+
+===
+title: GoToTheDancefloor
+tags: 33
+colorID: 0
+position: 1240,120
+---
+You move towards the dancefloor.
+
+-> Dance
+	<<jump Dance>>
+-> Linger
+	<<jump Linger>>
+
+===
+title: OrderCranberryJuice
+tags: 12
+colorID: 0
+position: 7,-189
+---
+You're a pussy.
+You are shamed by the bartender and the other people at the bar, for buying such a weak drink.
+You have no other choice but to leave.
+
+-> Leave Bar
+	<<jump LeaveBar>>
+===
+title: OrderANegroni
+tags: 44
+colorID: 0
+position: 306,-131
+---
+The bartender misunderstands what you say, thinking you are saying the n-word.
+She loudly shames you and the bouncer grabs you and throws you out.
+
+-> Leave Bar
+	<<jump LeaveBar>>
+===
+title: InsistOnFlirting
+tags: 56
+colorID: 0
+position: 645,-135
+---
+She signals to the bouncer.
+The bouncer arrives, grabs you by the arm and throws you out on the street.
+
+-> Leave Bar
+	<<jump LeaveBar>>
+===
+title: LeaveBar
+tags: 12345
+colorID: 0
+position: 330,-466
+---
+Outside, no way of getting back in.
+===
+title: Dance
+tags: 364
+colorID: 0
+position: 1240,-160
+---
+You are a terrible dancer, and people are laughing.
+You are shamed to such an extent that you have to leave.
+
+-> Leave Bar
+	<<jump LeaveBar>>
+===
+title: Linger
+tags: 3466
+colorID: 0
+position: 1520,-160
+---
+You look at the other party people on the dancefloor.
+People think you are a creep, and you are pushed out on the street by a handsome man.
+
+-> Leave Bar
+	<<jump LeaveBar>>
+===
+title: AskForAPenny
+tags: 24
+colorID: 0
+position: 1840,-160
+---
+You ask the first person walking by for a penny.
+She thinks you are a begger, and the bouncer hears her.
+"No bums allowed!".
+You get thrown out.
+
+-> Leave Bar
+	<<jump LeaveBar>>
+===
+title: LookForAPennyInYourPocket
+tags: 45
+colorID: 0
+position: 1840,400
+---
+You look in your pocket, and find a small, yellow pill with a happy face on it.
+
+-> Swallow It
+	<<jump SwallowIt>>
+
+-> Put it back
+	<<jump PutItBackInYourPocket>>
+===
+title: SwallowIt
+tags: 235
+colorID: 0
+position: 2120,-160
+---
+You are tripping instantly.
+What happened next is a blur, but you probably left.
+
+-> Leave Bar
+	<<jump LeaveBar>>
+===
+title: PutItBackInYourPocket
+tags: 33
+colorID: 0
+position: 2400,-160
+---
+Lol. Go home.
+
+-> Leave Bar
+	<<jump LeaveBar>>
+===
