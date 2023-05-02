@@ -1,0 +1,91 @@
+﻿title: start
+tags:
+position: 619,72
+---
+This is the first node
+Press 99 followed by \# if you want help.
+
+-> helpMe #99
+    <<jump help>>
+
+===
+
+title: help
+tags:
+position: 623,-183
+---
+So, which way?
+Press 1 to go up. Press 0 to go down.
+
+-> whatsUp #1
+    <<jump whatsUp>>
+-> whatsDown #0
+    <<jump whatsDown>>
+===
+
+title: whatsUp
+tags:
+position: -302,-278
+---
+This is what's up!
+How do you like it?
+Press 9 if you feel good. Press 5 if it's mid. Press 1 if you are not satisfied.
+
+-> feelingGood #9
+    <<jump good>>
+-> feelingMid #5
+    <<jump mid>>
+-> feelingBad #1
+    <<jump bad>>
+
+===
+
+title: whatsDown
+tags:
+position: 76,-170
+---
+This is what's down!
+How do you like it?
+Press 9 if you feel good. Press 5 if it's mid. Press 1 if you are not satisfied.
+
+-> feelingGood #9
+    <<jump good>>
+-> feelingMid #5
+    <<jump mid>>
+-> feelingBad #1
+    <<jump bad>>
+
+===
+
+title: good
+tags:
+position: 104,310
+---
+Good to hear.
+Press 0 to try again.
+
+-> retry #0
+    <<jump help>>
+===
+
+title: mid
+tags:
+position: -120,308
+---
+Yeah ok, I think we can do better...
+Press 0 to try again.
+
+-> retry #0
+    <<jump help>>
+===
+
+title: bad
+tags:
+position: -340,311
+---
+Sorry about that.
+Press 0 to try again.
+
+-> retry #0
+    <<jump help>>
+===
