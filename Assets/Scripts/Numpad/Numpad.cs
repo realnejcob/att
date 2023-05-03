@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 
 public class Numpad : MonoBehaviour {
+    public GameObject mask;
     [SerializeField] private TextMeshProUGUI displayText;
 
     public void AppendToDisplay(string toAppend) {

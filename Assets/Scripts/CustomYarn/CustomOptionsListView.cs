@@ -5,7 +5,9 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using Yarn.Unity;
 
-public class OptionsListViewCustom : OptionsListView {
+public class CustomOptionsListView : OptionsListView {
+    [SerializeField] private Numpad numpad;
+    [SerializeField] private GameObject continueButton;
     public DialogueOption[] Options { get; private set; }
     private Action<int> _onOptionSelected;
     public bool IsWaitingForOption { get; private set; } = false;
@@ -16,6 +18,8 @@ public class OptionsListViewCustom : OptionsListView {
         _onOptionSelected = onOptionSelected;
         Options = dialogueOptions;
         IsWaitingForOption = true;
+        numpad.mask.SetActive(false);
+        continueButton.SetActive(false);
 
         foreach (var option in dialogueOptions) {
             if (option.Line.Metadata != null) {
@@ -35,5 +39,7 @@ public class OptionsListViewCustom : OptionsListView {
         _onOptionSelected(selectedOption.DialogueOptionID);
         Options = new DialogueOption[] { };
         IsWaitingForOption = false;
+        numpad.mask.SetActive(true);
+        continueButton.SetActive(true);
     }
 }

@@ -10,7 +10,7 @@ public class CombinationManager : MonoBehaviour {
 
     [SerializeField] [ReadOnly] private string currentCombination;
     [SerializeField] private DialogueRunner dialogueRunner;
-    [SerializeField] private OptionsListViewCustom optionsListView;
+    [SerializeField] private CustomOptionsListView optionsListView;
 
     private void Awake() {
         if (Instance == null) {
