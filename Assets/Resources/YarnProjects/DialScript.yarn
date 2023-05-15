@@ -1,11 +1,12 @@
-﻿title: start
+title: start
 tags:
 position: 619,72
 ---
-This is the first node
-Press 99 followed by \# if you want help.
+Welcome to this little test.
+I wonder if we will have a choice to do something at some point...
+Yes!! Well look at that!
 
--> helpMe #99
+-> Press 99 followed by \# if you want help. #99
     <<jump help>>
 
 ===
@@ -14,12 +15,12 @@ title: help
 tags:
 position: 623,-183
 ---
-So, which way?
-Press 1 to go up. Press 0 to go down.
+Alright, Cowboy!
+Which way?
 
--> whatsUp #1
+-> Press 1 to go up. #1
     <<jump whatsUp>>
--> whatsDown #0
+-> Press 2 to go down. #2
     <<jump whatsDown>>
 ===
 
@@ -29,13 +30,12 @@ position: -302,-278
 ---
 This is what's up!
 How do you like it?
-Press 9 if you feel good. Press 5 if it's mid. Press 1 if you are not satisfied.
 
--> feelingGood #9
+-> Press 1 if you feel good. #1
     <<jump good>>
--> feelingMid #5
+-> Press 2 if it's OK. #2
     <<jump mid>>
--> feelingBad #1
+-> Press 0 if you are not satisfied. #0
     <<jump bad>>
 
 ===
@@ -46,13 +46,12 @@ position: 76,-170
 ---
 This is what's down!
 How do you like it?
-Press 9 if you feel good. Press 5 if it's mid. Press 1 if you are not satisfied.
 
--> feelingGood #9
+-> Press 1 if you feel good. #1
     <<jump good>>
--> feelingMid #5
+-> Press 2 if it's OK. #2
     <<jump mid>>
--> feelingBad #1
+-> Press 0 if you are not satisfied. #0
     <<jump bad>>
 
 ===
@@ -62,9 +61,8 @@ tags:
 position: 104,310
 ---
 Good to hear.
-Press 0 to try again.
 
--> retry #0
+-> Press 267 to try again. #267
     <<jump help>>
 ===
 
@@ -73,9 +71,8 @@ tags:
 position: -120,308
 ---
 Yeah ok, I think we can do better...
-Press 0 to try again.
 
--> retry #0
+-> Press 882 to try again. #882
     <<jump help>>
 ===
 
@@ -84,8 +81,7 @@ tags:
 position: -340,311
 ---
 Sorry about that.
-Press 0 to try again.
 
--> retry #0
+-> Press 523 to try again. #523
     <<jump help>>
 ===

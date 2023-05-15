@@ -5,12 +5,10 @@ using UnityEngine;
 using Yarn.Unity;
 
 public class CombinationManager : MonoBehaviour {
-
     public static CombinationManager Instance;
 
     [SerializeField] [ReadOnly] private string currentCombination;
-    [SerializeField] private DialogueRunner dialogueRunner;
-    [SerializeField] private CustomOptionsListView optionsListView;
+    [SerializeField] private DialogueOptionList dialogueOptionList;
 
     private void Awake() {
         if (Instance == null) {
@@ -30,20 +28,7 @@ public class CombinationManager : MonoBehaviour {
     }
 
     public void CommitCombination() {
-        if (!optionsListView.IsWaitingForOption) {
-            Debug.LogWarning("Not ready for option!");
-            return;
-        }
-
-        var options = optionsListView.Options;
-        foreach (var option in options) {
-            if (option.Line.Metadata[0] == currentCombination) {
-                optionsListView.OptionViewWasSelected(option);
-                return;
-            }
-        }
-
-        Debug.LogWarning("No match!");
+        dialogueOptionList.TrySelectOptionByCombination(currentCombination);
     }
 
     public void ClearCombination() {
