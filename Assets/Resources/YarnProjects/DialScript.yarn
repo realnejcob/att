@@ -6,9 +6,38 @@ Welcome to this little test.
 I wonder if we will have a choice to do something at some point...
 Yes!! Well look at that!
 
--> Press 99 followed by \# if you want help. #99
+-> Press 99 followed by \# if you want help. #dial #99
     <<jump help>>
+-> Press 55 to participate in the User Satisfaction Program. #dial #55
+    <<jump userSatisfationProgram>>
 
+===
+
+title: userSatisfationProgram
+position: 636,354
+---
+Thank you for participating.
+
+-> Input a number between 1 and 10. #var #satisfaction
+    <<jump satisfactionConclusion>>
+===
+
+title: satisfactionConclusion
+position: 629,564
+---
+<<if $satisfaction == 0>>
+    We are sorry that we could not meet your expectations.
+    <<jump help>>
+<<elseif $satisfaction > 1 && $satisfaction < 5>>
+    Thank you for acknowledging our work and helping us improve.
+    <<jump help>>
+<<elseif $satisfaction >= 5 && $satisfaction < 10>>
+    We are glad that you are somewhat satisfied.
+    <<jump help>>
+<<else>>
+    This means the world to us. Thank you!
+    <<jump help>>
+<<endif>>
 ===
 
 title: help
@@ -18,9 +47,9 @@ position: 623,-183
 Alright, Cowboy!
 Which way?
 
--> Press 1 to go up. #1
+-> Press 1 to go up. #dial #1
     <<jump whatsUp>>
--> Press 2 to go down. #2
+-> Press 2 to go down. #dial #2
     <<jump whatsDown>>
 ===
 
@@ -31,11 +60,11 @@ position: -302,-278
 This is what's up!
 How do you like it?
 
--> Press 1 if you feel good. #1
+-> Press 1 if you feel good. #dial #1
     <<jump good>>
--> Press 2 if it's OK. #2
+-> Press 2 if it's OK. #dial #2
     <<jump mid>>
--> Press 0 if you are not satisfied. #0
+-> Press 0 if you are not satisfied. #dial #0
     <<jump bad>>
 
 ===
@@ -47,12 +76,12 @@ position: 76,-170
 This is what's down!
 How do you like it?
 
--> Press 1 if you feel good. #1
-    <<jump good>>
--> Press 2 if it's OK. #2
-    <<jump mid>>
--> Press 0 if you are not satisfied. #0
+-> Press 0 if terrible. #dial #0
     <<jump bad>>
+-> Press 5 if OK. #dial #5
+    <<jump mid>>
+-> Press 100 if amazing. #dial #100
+    <<jump good>>
 
 ===
 
@@ -62,7 +91,7 @@ position: 104,310
 ---
 Good to hear.
 
--> Press 267 to try again. #267
+-> Press 267 to try again. #dial #267
     <<jump help>>
 ===
 
@@ -72,7 +101,7 @@ position: -120,308
 ---
 Yeah ok, I think we can do better...
 
--> Press 882 to try again. #882
+-> Press 882 to try again. #dial #882
     <<jump help>>
 ===
 
@@ -82,6 +111,6 @@ position: -340,311
 ---
 Sorry about that.
 
--> Press 523 to try again. #523
+-> Press 523 to try again. #dial #523
     <<jump help>>
 ===

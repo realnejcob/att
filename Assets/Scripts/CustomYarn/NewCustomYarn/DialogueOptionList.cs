@@ -5,6 +5,7 @@ using UnityEngine;
 using Yarn.Unity;
 
 public class DialogueOptionList : DialogueViewBase {
+    [SerializeField] private DialogueRunner dialogueRunner;
     private DialogueOption[] options;
     private Action<int> _onOptionSelected;
     private bool isWaiting = false;
@@ -35,21 +36,31 @@ public class DialogueOptionList : DialogueViewBase {
         }
     }
 
-    public bool TrySelectOptionByCombination(string combination) {
+    public bool TrySelectOptionByCombination(string combinationInput) {
         foreach (var option in options) {
             if (option.Line.Metadata.Length == 0)
                 continue;
 
-            if (option.Line.Metadata[0] == combination) {
-                SelectOption(option);
-                return true;
+            switch (option.Line.Metadata[0]) {
+                case "dial":
+                    if (option.Line.Metadata[1] == combinationInput) {
+                        SelectOptionByID(option.DialogueOptionID);
+                        return true;
+                    }
+                    break;
+                case "var":
+                    var varName = $"${option.Line.Metadata[1]}";
+                    var input = Int32.Parse(combinationInput);
+                    dialogueRunner.VariableStorage.SetValue(varName, input);
+                    SelectOptionByID(option.DialogueOptionID);
+                    return true;
             }
         }
 
         return false;
     }
 
-    private void SelectOption(DialogueOption selectedOption) {
+    private void SelectOptionByID(int optionID) {
         if (!isWaiting)
             return;
 
@@ -59,29 +70,13 @@ public class DialogueOptionList : DialogueViewBase {
             isWaiting = false;
             numpadMask.SetActive(true);
 
-            HideAllOptionViews(selectedOption.DialogueOptionID);
+            HideAllOptionViews(optionID);
 
             yield return new WaitForSeconds(2);
 
-            _onOptionSelected(selectedOption.DialogueOptionID);
+            _onOptionSelected(optionID);
             continueButton.SetActive(true);
         }
-    }
-
-    private void SelectOptionByID(int optionID) {
-        if (!isWaiting)
-            return;
-
-        if (optionID > options.Length - 1)
-            return;
-
-        _onOptionSelected(optionID);
-        isWaiting = false;
-
-        numpadMask.SetActive(true);
-        continueButton.SetActive(true);
-
-        HideAllOptionViews(optionID);
     }
 
     private void HideAllOptionViews(int selectedOptionID) {
